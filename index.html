@@ -592,6 +592,26 @@ section[id]{scroll-margin-top:60px}
   .gmap{display:inline-flex;align-items:center;min-height:44px}
   .rp-replay{min-height:44px;padding:10px 14px}
 }
+
+/* ===== print / PDF ===== */
+.print-only{display:none}
+@media print{
+  @page{size:A4;margin:10mm}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:var(--paper)}
+  body::before,.dots,.fab,.toast,.progress,.swipe-hint,.rp-replay,.wmap-ctrl,.leaflet-control-zoom,.top .mini,.topnav{display:none!important}
+  .top{position:relative;backdrop-filter:none;-webkit-backdrop-filter:none;background:#fbfaf8}
+  .rv,.js .rv,.js .rv.pre{opacity:1!important;transform:none!important;transition:none!important}
+  .odo-r{transition:none!important}
+  .sp{animation:none!important;opacity:1!important;transform:none!important}
+  .hero .wrap{min-height:680px}
+  .print-only{display:block}
+  .print-links{font-size:13px;line-height:1.8;color:var(--on-night-soft);margin-top:6px}
+  .print-links a{color:#ff8a45;text-decoration:none}
+  /* keep blocks whole across pages */
+  .sec-head,.summary,.wmap,.why-grid,.act,.proc,.stage,.ripple,.close,.signoff{break-inside:avoid;page-break-inside:avoid}
+  #how,#gift,#donate{break-before:page;page-break-before:always}
+  section.blk{padding-block:56px}
+}
 </style>
 
 <!-- 수정 포인트: 아래 <script>의 CAMPAIGN 설정값만 바꾸면 국가·예산·기간·후원 링크가 페이지 전체에 반영됩니다. -->
@@ -706,7 +726,7 @@ section[id]{scroll-margin-top:60px}
         <p class="lines">반복되는 가뭄으로 농사만으로는 가족을 먹이기 어렵습니다.<br class="br-d"> 기댈 수 있는 생계 자산이 없는 가정일수록 여성과 아이들이 가장 먼저 위험해집니다.</p>
       </div>
       <div class="why-grid">
-      <figure class="photo wide rv"><img src="img/drought.jpg" alt="가뭄으로 말라버린 옥수수밭" loading="lazy"><figcaption>가뭄으로 말라버린 농경지</figcaption></figure>
+      <figure class="photo wide rv"><img src="img/drought.jpg" alt="가뭄으로 말라버린 옥수수밭"><figcaption>가뭄으로 말라버린 농경지</figcaption></figure>
       <div class="why">
         <ul>
           <li class="rv"><span class="tag">영양 부족</span><h3>식량이 모자라 아이들이 영양실조 위험에</h3><p>수확량이 줄면서 충분하고 영양가 있는 음식을 먹지 못하는 가구가 늘고 있습니다.</p></li>
@@ -730,7 +750,7 @@ section[id]{scroll-margin-top:60px}
       <div class="act rv">
         <h3 class="act-title"><span class="act-no">01</span>염소 지원을 통한 취약가정 소득 증대</h3>
         <div class="act-grid">
-          <figure class="act-ph"><img src="img/distribution.jpg" width="981" height="630" alt="주민들에게 염소를 배분하는 모습" loading="lazy"><figcaption>염소 배분 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
+          <figure class="act-ph"><img src="img/distribution.jpg" width="981" height="630" alt="주민들에게 염소를 배분하는 모습"><figcaption>염소 배분 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
           <ul class="act-list plain">
             <li><i><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></i><div><b>수혜 가구 선정 및 참여 협약 체결</b></div></li>
             <li><i><svg viewBox="0 0 24 24"><path d="M5 9c0-2 1.5-3 3-3h7l3 3v4l-2 1v5M8 6 6 3M15 6l2-3M8 13v6M12 13v6M5 9l-2 2"/></svg></i><div><b>취약계층 가구 대상 염소 <span data-k="goats"></span>마리 지원</b><small>* 지원 수량은 사업예산 및 현지 물가에 따라 변동될 수 있음</small></div></li>
@@ -743,7 +763,7 @@ section[id]{scroll-margin-top:60px}
       <div class="act rv">
         <h3 class="act-title"><span class="act-no">02</span>사육 교육을 통한 생계역량 강화</h3>
         <div class="act-grid">
-          <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습" loading="lazy"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
+          <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
           <ul class="act-list plain">
             <li><i><svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></i><div><b>1차 · 염소 사육 기초 교육</b><small>품종 특성 · 축사 · 질병 · 사료 · 기록 관리 기초</small></div></li>
             <li><i><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></svg></i><div><b>2차 · 염소 사육 실습 교육</b><small>번식 · 개체 선발 · 질병 관리 · 사료작물 · 가뭄 대응</small></div></li>
@@ -821,6 +841,7 @@ section[id]{scroll-margin-top:60px}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <p class="contact">한국월드비전<br>서울시 영등포구 여의나루로 77-1 (07327)</p>
+    <p class="print-only print-links">후원하기 <a href="https://my.worldvision.or.kr/support/?key=26_gbf1004&amp;crmcd=73563&amp;mcode=31490">my.worldvision.or.kr/support/?key=26_gbf1004</a><br>캠페인 페이지 <a href="https://worldvisionkr.github.io/gbf-1004-project/">worldvisionkr.github.io/gbf-1004-project</a></p>
   </div>
 </section>
 
@@ -1401,6 +1422,7 @@ var CAMPAIGN = {
     // each column is exactly as wide as the digit it lands on, so the final number keeps its natural spacing
     function fit(){ cols.forEach(function(o){ var m = document.createElement("span"); m.textContent = o.d; m.style.cssText = "position:absolute;visibility:hidden;white-space:pre"; o.r.parentNode.parentNode.appendChild(m); o.r.parentNode.style.width = m.getBoundingClientRect().width + "px"; m.remove(); }); }
     fit(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    (window.__odoLand = window.__odoLand || []).push(function(){ done = true; cols.forEach(function(o){ o.r.style.transition = "none"; o.r.style.transform = "translateY(" + (-(10 + o.d)) + "em)"; }); });
     function roll(){
       cols.forEach(function(o, i){
         o.r.style.transitionDuration = (1.3 + (i / Math.max(1, n - 1)) * 0.9).toFixed(2) + "s";
@@ -1419,6 +1441,18 @@ var CAMPAIGN = {
   }
   odometer(".sum-facts strong > span[data-k]", ".sum-facts");
   odometer(".st-fig b[data-k]", ".stages");
+})();
+
+// print & PDF: show the finished state of every scroll effect (numbers landed, sections revealed)
+(function(){
+  function ready(){
+    document.documentElement.classList.add("printing");
+    document.querySelectorAll(".rv.pre").forEach(function(e){ e.classList.remove("pre"); });
+    (window.__odoLand || []).forEach(function(fn){ fn(); });
+  }
+  window.addEventListener("beforeprint", ready);
+  if (window.matchMedia) { var mq = matchMedia("print"); if (mq.addEventListener) mq.addEventListener("change", function(e){ if (e.matches) ready(); }); }
+  if (/[?&]print=1/.test(location.search)) { ready(); window.addEventListener("load", ready); }
 })();
 </script>
 
