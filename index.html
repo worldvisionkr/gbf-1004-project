@@ -399,6 +399,8 @@ section.blk + section.blk{padding-top:0}
 .signoff .wrap{padding-block:clamp(14px,1.6vw,20px) clamp(56px,7vw,88px)}
 .signoff p{margin:0;padding-top:clamp(22px,2.6vw,30px);border-top:1px solid rgba(23,20,15,.35);font-family:var(--f-en);font-weight:900;font-size:clamp(24px,2.8vw,34px);line-height:1;letter-spacing:0;text-transform:uppercase}
 .signoff em{font-style:normal;color:var(--orange);white-space:nowrap}
+.signoff p{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.signoff .so-logo{display:block;height:2em;width:auto;max-width:none}
 @media (max-width:880px){.signoff .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
 /* closing band */
 /* closing: photo sits to the right (child + goat stay bright), copy on the open left side */
@@ -847,7 +849,7 @@ section[id]{scroll-margin-top:60px}
 
 <footer class="signoff">
   <div class="wrap">
-    <p lang="en">Let's make it happen with <em>World Vision.</em></p>
+    <p lang="en">Let's make it happen with <img class="so-logo" src="img/logo-gbf.png" width="356" height="146" alt="GBF Global Biz Forum"></p>
   </div>
 </footer>
 
