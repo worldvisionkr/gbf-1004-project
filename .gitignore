@@ -1,0 +1,21 @@
+# 이 저장소는 공개(GitHub Pages)다. 아래 파일은 절대 올라가지 않게 막는다.
+# 공개되는 것: index.html, img/, data/, .nojekyll, .gitignore 뿐.
+
+# 내부 작업 자료 (제안서, PDF, 원본 이미지, 도구 스크립트, 백업)
+_work/
+
+# Claude 미리보기 설정
+.claude/
+
+# 편집용 원본 (배포본은 index.html)
+goat-campaign.html
+
+# 문서 파일은 어디에 있어도 올리지 않는다
+*.pdf
+*.pptx
+*.ppt
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.txt
